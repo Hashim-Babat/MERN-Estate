@@ -1,8 +1,12 @@
 import React from 'react'
 import {FaSearch} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export default function Header() {
+    const currentUser = useSelector((state) => state.user);
+    console.log("Current User:", currentUser); // Log current user data
+    console.log("Avatar URL:", currentUser.avatar); // Log avatar URL
   return (
     <header className='bg-slate-200 shadow-lg'>
         <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
@@ -23,8 +27,16 @@ export default function Header() {
                 <Link to='/about'>
                     <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
                 </Link>
-                <Link to='/sign-in' >
-                    <li className='text-slate-700 hover:underline'>Sign In</li>
+                <Link to='/profile' >
+                    { currentUser ? (
+                        <img className='rounded-full w-7 h-7 object-cover' src={currentUser.avatar} alt="profile"
+                            onError={(e) => {
+                                e.target.src = "https://www.shutterstock.com/shutterstock/photos/1760295569/display_1500/stock-vector-profile-picture-avatar-icon-vector-1760295569.jpg"; // Replace with your default avatar URL
+                            }}
+                        />
+                    ):(
+                        <li className='text-slate-700 hover:underline'>Sign In</li>
+                    )}
                 </Link>
             </ul>
         </div>

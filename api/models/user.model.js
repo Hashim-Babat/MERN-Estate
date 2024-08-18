@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     avatar : {
         type:String,
-        default:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUap8S-5kNNUnDXcynSZeIaFnKNISGf7CN3Q&s"
+        default:"https://www.shutterstock.com/shutterstock/photos/1760295569/display_1500/stock-vector-profile-picture-avatar-icon-vector-1760295569.jpg",
     },
 }, { timestamps:true});
 
