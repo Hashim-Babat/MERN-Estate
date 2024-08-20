@@ -22,14 +22,14 @@ export default function Header() {
             </form>
             <ul className='flex gap-4'>
                 <Link to='/'>
-                    <li className='hidden sm:inline text-slate-700 hover:underline'>Home</li>
+                    <li className='hidden sm:inline text-slate-700 hover:underline ml-2'>Home</li>
                 </Link>
                 <Link to='/about'>
-                    <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
+                    <li className='hidden sm:inline text-slate-700 hover:underline ml-2'>About</li>
                 </Link>
                 <Link to='/profile' >
                     { currentUser ? (
-                        <img className='rounded-full w-7 h-7 object-cover' src={currentUser.currentUser.rest.avatar} alt="profile"
+                        <img className='rounded-full w-7 h-7 object-cover ml-3' src={currentUser.currentUser.rest.avatar} alt="profile"
                             
                         />
                     ):(
